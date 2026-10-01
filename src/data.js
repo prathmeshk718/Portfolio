@@ -60,7 +60,7 @@ export const projects = [
 
 // Skills are grouped by what they are used for, not by logo.
 export const skills = [
-  { group: "Interfaces", items: "React, TypeScript, Tailwind CSS, accessible components" },
+  { group: "Interfaces", items: "React, TypeScript, Tailwind CSS, ROS(Robot Operating System)" },
   { group: "Back end", items: "Node.js, Express, PostgreSQL, REST APIs" },
   { group: "Quality", items: "Vitest, Playwright, Lighthouse, code review" },
   { group: "Workflow", items: "Git, GitHub Actions, Vercel, Figma handoff" },
