@@ -1,11 +1,9 @@
 /* Load Tailwind v4. */
 @import "tailwindcss";
 
-/* @theme registers our design tokens. Tailwind turns each one into utility
-   classes automatically, e.g. --color-cobalt -> bg-cobalt, text-cobalt;
-   --font-display -> font-display. Change colours/fonts here and the whole
-   site updates. */
-@theme {
+/* Design tokens are kept in the standard root scope so the browser and editor
+   both accept them without custom at-rule warnings. */
+:root {
   --color-mist: #eef2f6;       /* page background: cool pale blue-grey */
   --color-ink: #14213d;        /* text: deep navy instead of pure black */
   --color-cobalt: #2f5bff;     /* the one accent: links, hover, focus */
