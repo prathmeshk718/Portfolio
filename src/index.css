@@ -1,0 +1,47 @@
+/* Load Tailwind v4. */
+@import "tailwindcss";
+
+/* @theme registers our design tokens. Tailwind turns each one into utility
+   classes automatically, e.g. --color-cobalt -> bg-cobalt, text-cobalt;
+   --font-display -> font-display. Change colours/fonts here and the whole
+   site updates. */
+@theme {
+  --color-mist: #eef2f6;       /* page background: cool pale blue-grey */
+  --color-ink: #14213d;        /* text: deep navy instead of pure black */
+  --color-cobalt: #2f5bff;     /* the one accent: links, hover, focus */
+  --color-signal: #ffd84d;     /* highlight, used sparingly */
+  --color-soft: #55657f;       /* secondary text (passes contrast on mist) */
+
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* Base styles applied to the whole page */
+html {
+  scroll-behavior: smooth; /* nav links glide to their section */
+}
+body {
+  background-color: var(--color-mist);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The ONE page-load animation: hero lines rise in one after another.
+   Each element sets its own delay through an inline style (see Hero.jsx). */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+.rise {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Respect people who ask their OS to reduce motion: turn animations and
+   smooth scrolling off. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}
